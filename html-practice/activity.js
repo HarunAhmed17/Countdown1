@@ -17,17 +17,34 @@ const bookList = [
     bookList.push({title,author});
   }
 
-  
+  const removeBook = (title,author) => {
+    const rem = bookList.findIndex(book => book.title === title && book.author === author);
+    bookList.splice(rem,1);
+
+  }
+
+  const printbooks = () =>{
+    bookList.forEach(book => {
+        console.log(book)
+    })
+  }
+
   addBook("abc","def");
   console.log(bookList);
+  removeBook("Moby Dick","Herman Melville")
+  console.log(bookList)
+  printbooks()
   
   /* Intermediate Challenge */
   
   /* (4) Write a one-line arrow function that takes in a number and returns a string stating whether the
     number is positive or negative using a ternary operator (assume the number will never be zero) */
+    const numf = (num) => {num>0?console.log("positive!"):console.log("negative!")}
+    numf(-3)
   
   /* (5) Write a switch statement for a 'day' variable that prints out something based off of what day of
     the week it is i.e. if it's Monday, print "good luck" or wednesday print "hump day" or friday print "party" */
+
   
   /* (6) Write an arrow function that takes in a number, and uses a for loop to return the sum of every
     number from 1 up to that number
